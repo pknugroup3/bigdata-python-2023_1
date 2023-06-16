@@ -33,3 +33,54 @@ print(origin[0]+origin[16]+
       origin[0].lower()+origin[15].lower())
 print(origin[0:4]) # == print(origin[:4]) slicing
 print(origin[8:13])
+
+print(origin[15:]) # index 15부터 끝가지
+print(origin[15:-7]) # 음수는 뒤에서부터 인덱스 -1부터 시작
+
+# 문자열 포맷팅
+print('I ate %s apples' % ('three')) # % string formating
+print('I ate %d apples' % (3))
+print('pi is %f' %3.141592)
+print('pi is %10.2f' %3.1415926535)
+
+# 날짜 문자열 포맷팅
+import datetime as dt
+
+curr_dt = dt.datetime.now()
+fmt_dt = curr_dt.strftime('%Y년%m월%d일')
+print(curr_dt)
+print('오늘 날짜는 %s 입니다.' % curr_dt.strftime('%Y년%m월%d일'))
+
+# 최신 포맷팅
+apple_num = 3
+print(f'I ate {apple_num:0.4f} apples')
+apple_num = 'three'
+print(f'I ate {apple_num} apples')
+print(f'오늘 날짜는{fmt_dt}')
+
+# 문자열 함수
+# 'Life is Short, You need Python'
+print(origin.count('o')) # 문자, 문자열의 개수
+print(origin.find('Python')) # 문자, 문자열 찾는 시작 인덱스 -1 없음
+
+print('/'.join(origin)) # 문자(열) Join에 있는 문자열이랑 하나씩 합치는 함수
+print(origin.upper()) # 전부 대문자
+print(origin.lower()) # 전부 소문자
+print(origin.capitalize()) # 문자열의 첫번째 단어만 대문자로
+print(origin.title())  # 단어의 첫번째 글자만 대문자로
+
+print('start','    Hello    ','end') # 기본
+print('start','    Hello    '.lstrip(),'end') # 왼쪽 공백지우기
+print('start','    Hello    '.rstrip(),'end') # 오른쪽 공백지우기
+print('start','    Hello    '.strip(),'end') # 양쪽 공백지우기
+
+result = origin.replace(',','').split(' ') # 공백으로 자르기 -> 배열(리스트)
+print(result)
+
+
+
+
+
+
+
+
